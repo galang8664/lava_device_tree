@@ -25,13 +25,17 @@ $(call inherit-product, vendor/xiaomi/lava/lava-vendor.mk)
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay
-
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/SpeechVol_AudioParam.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/SpeechVol_AudioParam.xml
+    $(LOCAL_PATH)/configs/audio/aurisys_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/aurisys_config.xml
+
+# Overlays
+PRODUCT_PACKAGES += \
+    FrameworksResOverlayLava
+
+# Kernel
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/prebuilt/dtb.img:dtb.img
 
 # NFC stack (AOSP)
 PRODUCT_COPY_FILES += \
