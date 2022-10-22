@@ -56,6 +56,10 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag
 
+# FM Radio
+PRODUCT_PACKAGES += \
+    MtkFMRadio
+
 # SKU-specific properties
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/sku_props/build_ss_vendor.prop:$(TARGET_COPY_OUT_VENDOR)/build_ss_vendor.prop \
